@@ -1,4 +1,5 @@
 //FormApp.jsx
+import { useEffect, useRef } from "react"
 import { useForm } from "../hooks/useForm"
 
 
@@ -17,12 +18,21 @@ export const FormsApp = () => {
         console.log(username, email, password)
     }
 
+    const focusRef = useRef()  /*Declaración de la constante focusRef asignandole useRef*/
+
+    /*useEffect para que haya foco en la referencia*/
+    useEffect(() => {
+      focusRef.current.focus()
+    }, [])
+    
+
     return (
         <>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label">Username</label>
-                    <input
+                    <input                        
+                        ref = {focusRef} /*Referencia en el input */
                         type="text"
                         className="form-control"
                         id="username"
@@ -33,7 +43,7 @@ export const FormsApp = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input
+                    <input                        
                         type="email"
                         className="form-control"
                         id="email"
