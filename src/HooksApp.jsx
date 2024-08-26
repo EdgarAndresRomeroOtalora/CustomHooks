@@ -1,16 +1,16 @@
 //HooksApp.jsx
 
-import { FetchApp } from "./components/FetchApp"
-import { CounterApp } from "./components/CounterApp"
-import { FormsApp } from "./components/FormsApp"
-import { CalculoPesadoApp } from "./components/CalculoPesadoApp"
+import { FetchComponent } from "./components/FetchComponent"
+import { CounterComponent } from "./components/CounterComponent"
+import { FormsComponent } from "./components/FormsComponent"
+import { CalculoPesadoComponent } from "./components/CalculoPesadoComponent"
 
 export const HooksApp = () => {
   return (
     <>
       <h1>Aplicación de Hooks</h1>
       <hr />
-      <CalculoPesadoApp />
+      <CalculoPesadoComponent />
     </>
   )
 }
